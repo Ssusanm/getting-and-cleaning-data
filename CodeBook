@@ -1,0 +1,111 @@
+The raw data was collected from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
+
+As per UCI page: Data Set Information:
+The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. 
+Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
+The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain.
+
+The run_analysis.R script was run to obtain the final tidy dataset. As per requirement, script does the following:
+1. Merges the training and the test sets to create one data set.
+2. Extracts only the measurements on the mean and standard deviation for each measurement. 
+3. Uses descriptive activity names to name the activities in the data set
+4. Appropriately labels the data set with descriptive variable names. 
+5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+
+The final variables in the tidy dataset are:
+ [1] "label"                                                              
+ [2] "TimeDomain_BodyAcceleration_mean_X"                                 
+ [3] "TimeDomain_BodyAcceleration_mean_Y"                                 
+ [4] "TimeDomain_BodyAcceleration_mean_Z"                                 
+ [5] "TimeDomain_BodyAcceleration_StandardDeviation_X"                    
+ [6] "TimeDomain_BodyAcceleration_StandardDeviation_Y"                    
+ [7] "TimeDomain_BodyAcceleration_StandardDeviation_Z"                    
+ [8] "TimeDomain_GravityAcceleration_mean_X"                              
+ [9] "TimeDomain_GravityAcceleration_mean_Y"                              
+[10] "TimeDomain_GravityAcceleration_mean_Z"                              
+[11] "TimeDomain_GravityAcceleration_StandardDeviation_X"                 
+[12] "TimeDomain_GravityAcceleration_StandardDeviation_Y"                 
+[13] "TimeDomain_GravityAcceleration_StandardDeviation_Z"                 
+[14] "TimeDomain_BodyAccelerationJerk_mean_X"                             
+[15] "TimeDomain_BodyAccelerationJerk_mean_Y"                             
+[16] "TimeDomain_BodyAccelerationJerk_mean_Z"                             
+[17] "TimeDomain_BodyAccelerationJerk_StandardDeviation_X"                
+[18] "TimeDomain_BodyAccelerationJerk_StandardDeviation_Y"                
+[19] "TimeDomain_BodyAccelerationJerk_StandardDeviation_Z"                
+[20] "TimeDomain_BodyGyroscope_mean_X"                                    
+[21] "TimeDomain_BodyGyroscope_mean_Y"                                    
+[22] "TimeDomain_BodyGyroscope_mean_Z"                                    
+[23] "TimeDomain_BodyGyroscope_StandardDeviation_X"                       
+[24] "TimeDomain_BodyGyroscope_StandardDeviation_Y"                       
+[25] "TimeDomain_BodyGyroscope_StandardDeviation_Z"                       
+[26] "TimeDomain_BodyGyroscopeJerk_mean_X"                                
+[27] "TimeDomain_BodyGyroscopeJerk_mean_Y"                                
+[28] "TimeDomain_BodyGyroscopeJerk_mean_Z"                                
+[29] "TimeDomain_BodyGyroscopeJerk_StandardDeviation_X"                   
+[30] "TimeDomain_BodyGyroscopeJerk_StandardDeviation_Y"                   
+[31] "TimeDomain_BodyGyroscopeJerk_StandardDeviation_Z"                   
+[32] "TimeDomain_BodyAccelerationMagnitude_mean"                          
+[33] "TimeDomain_BodyAccelerationMagnitude_StandardDeviation"             
+[34] "TimeDomain_GravityAccelerationMagnitude_mean"                       
+[35] "TimeDomain_GravityAccelerationMagnitude_StandardDeviation"          
+[36] "TimeDomain_BodyAccelerationJerkMagnitude_mean"                      
+[37] "TimeDomain_BodyAccelerationJerkMagnitude_StandardDeviation"         
+[38] "TimeDomain_BodyGyroscopeMagnitude_mean"                             
+[39] "TimeDomain_BodyGyroscopeMagnitude_StandardDeviation"                
+[40] "TimeDomain_BodyGyroscopeJerkMagnitude_mean"                         
+[41] "TimeDomain_BodyGyroscopeJerkMagnitude_StandardDeviation"            
+[42] "FrequencyDomain_BodyAcceleration_mean_X"                            
+[43] "FrequencyDomain_BodyAcceleration_mean_Y"                            
+[44] "FrequencyDomain_BodyAcceleration_mean_Z"                            
+[45] "FrequencyDomain_BodyAcceleration_StandardDeviation_X"               
+[46] "FrequencyDomain_BodyAcceleration_StandardDeviation_Y"               
+[47] "FrequencyDomain_BodyAcceleration_StandardDeviation_Z"               
+[48] "FrequencyDomain_BodyAcceleration_meanFrequency_X"                   
+[49] "FrequencyDomain_BodyAcceleration_meanFrequency_Y"                   
+[50] "FrequencyDomain_BodyAcceleration_meanFrequency_Z"                   
+[51] "FrequencyDomain_BodyAccelerationJerk_mean_X"                        
+[52] "FrequencyDomain_BodyAccelerationJerk_mean_Y"                        
+[53] "FrequencyDomain_BodyAccelerationJerk_mean_Z"                        
+[54] "FrequencyDomain_BodyAccelerationJerk_StandardDeviation_X"           
+[55] "FrequencyDomain_BodyAccelerationJerk_StandardDeviation_Y"           
+[56] "FrequencyDomain_BodyAccelerationJerk_StandardDeviation_Z"           
+[57] "FrequencyDomain_BodyAccelerationJerk_meanFrequency_X"               
+[58] "FrequencyDomain_BodyAccelerationJerk_meanFrequency_Y"               
+[59] "FrequencyDomain_BodyAccelerationJerk_meanFrequency_Z"               
+[60] "FrequencyDomain_BodyGyroscope_mean_X"                               
+[61] "FrequencyDomain_BodyGyroscope_mean_Y"                               
+[62] "FrequencyDomain_BodyGyroscope_mean_Z"                               
+[63] "FrequencyDomain_BodyGyroscope_StandardDeviation_X"                  
+[64] "FrequencyDomain_BodyGyroscope_StandardDeviation_Y"                  
+[65] "FrequencyDomain_BodyGyroscope_StandardDeviation_Z"                  
+[66] "FrequencyDomain_BodyGyroscope_meanFrequency_X"                      
+[67] "FrequencyDomain_BodyGyroscope_meanFrequency_Y"                      
+[68] "FrequencyDomain_BodyGyroscope_meanFrequency_Z"                      
+[69] "FrequencyDomain_BodyAccelerationMagnitude_mean"                     
+[70] "FrequencyDomain_BodyAccelerationMagnitude_StandardDeviation"        
+[71] "FrequencyDomain_BodyAccelerationMagnitude_meanFrequency"            
+[72] "FrequencyDomain_BodyBodyAccelerationJerkMagnitude_mean"             
+[73] "FrequencyDomain_BodyBodyAccelerationJerkMagnitude_StandardDeviation"
+[74] "FrequencyDomain_BodyBodyAccelerationJerkMagnitude_meanFrequency"    
+[75] "FrequencyDomain_BodyBodyGyroscopeMagnitude_mean"                    
+[76] "FrequencyDomain_BodyBodyGyroscopeMagnitude_StandardDeviation"       
+[77] "FrequencyDomain_BodyBodyGyroscopeMagnitude_meanFrequency"           
+[78] "FrequencyDomain_BodyBodyGyroscopeJerkMagnitude_mean"                
+[79] "FrequencyDomain_BodyBodyGyroscopeJerkMagnitude_StandardDeviation"   
+[80] "FrequencyDomain_BodyBodyGyroscopeJerkMagnitude_meanFrequency"       
+[81] "subject"                                                            
+[82] "activity".
+
+For changing the column names to be more descriptive following rules were used:
+1. while merging itself, since features has names only for 561 cols, naming 562 as Label and 563 as Subject
+2. all the () were removed from the original column names
+3. since the domains are time and frequency, changed the variables with tVariableName to TimeDomainVarialeName and fVariableName to FrequencyDomainVariableName
+4. changed Gyro to be Gyroscope
+5. changed Acc to be Acceleration
+6. changed Mag to be Magnitude
+7. changed std to StandardDeviation
+8. changed meanFreq to MeanFrequency
+
+Then independent tidy dataset was created that shows the average of each variable for each activity and each subject.
+
+
