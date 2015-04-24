@@ -32,7 +32,6 @@ subject_test <- read.table(paste(maindir,"/test/subject_test.txt",sep=""))
 training_data <- cbind(x_train,subject_train,y_train) # Creating one dataset for training data
 test_data <- cbind(x_test,subject_test,y_test) # creating one dataset for test data
 #merged_data_1 <- merge(training_data,test_data,all=TRUE) - using the rbind as system giving some error
-#because of by variable - here no variable to join by
 merged_data <- rbind(training_data,test_data) # merging training and test data together
 
 #since features has names only for 561 cols, naming 562 as Label and 563 as Subject
