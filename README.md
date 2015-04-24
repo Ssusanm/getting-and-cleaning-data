@@ -31,7 +31,7 @@ From the data set in step 4, creates a second, independent tidy data set with th
 4. once script runs, the tidy, mean_std_avg.txt, can be found at your main directory.
 
 #Steps used in the script:
-setting the working directory --> call the library needed(dplyr, plyr) --> load feature.txt and activity_labels.txt into R
+set the working directory --> call the library needed(dplyr, plyr) --> load feature.txt and activity_labels.txt into R
 --> load the training and test data files into R --> Merge the test and training datasets --> create column names for merged dataset from features dataset and name 562nd column as subject and 563rd as label --> pull only columns that has column names with mean and std in them --> label with decriptive variable names --> create tidy dataset --> write tidy dataset to a text file.
 
 
